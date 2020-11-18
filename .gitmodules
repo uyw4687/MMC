@@ -1,0 +1,3 @@
+[submodule "MaskedFace-Net"]
+	path = MaskedFace-Net
+	url = http://github.com/cabani/MaskedFace-Net.git
