@@ -15,7 +15,7 @@ def annotate_landmarks(img, landmarks):
         cv2.circle(img, pos, 3, color=(0, 2, 2))
     return img
 
-def centor(pts):
+def center(pts):
     lip_mean = np.mean(pts, axis=0)
     return int(lip_mean[:, 1])
 
@@ -28,9 +28,9 @@ def detect_speaking(img):
 
     img_with_landmarks = annotate_landmarks(img, landmarks)
 
-    top_lip_centor = centor(landmarks[50:53] + landmarks[61:64])
-    bottom_lip_centor = centor(landmarks[65:68] + landmarks[56:59])
-    lip_distance = abs(top_lip_centor - bottom_lip_centor)
+    top_lip_center = center(landmarks[50:53] + landmarks[61:64])
+    bottom_lip_center = center(landmarks[65:68] + landmarks[56:59])
+    lip_distance = abs(top_lip_center - bottom_lip_center)
 
     return img_with_landmarks, lip_distance
 
